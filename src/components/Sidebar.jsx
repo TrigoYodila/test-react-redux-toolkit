@@ -82,12 +82,15 @@ const Sidebar = () => {
 
         <CenterContainer>
           <NavLink
-            style={{
-              textDecoration: "none",
-              color: "rgba(0,0,0,0.8)",
-              display: "flex",
-              alignItems: "center",
-              gap: "10px",
+            style={({ isActive }) => {
+              return {
+                textDecoration: "none",
+                color: "rgba(0,0,0,0.8)",
+                display: "flex",
+                alignItems: "center",
+                gap: "10px",
+                backgroundColor: isActive ? "#eeeeee" : "transparent",
+              };
             }}
             to="/authors"
           >
@@ -97,12 +100,15 @@ const Sidebar = () => {
             Authors
           </NavLink>
           <NavLink
-            style={{
-              textDecoration: "none",
-              color: "rgba(0,0,0,0.8)",
-              display: "flex",
-              alignItems: "center",
-              gap: "10px",
+            style={({ isActive }) => {
+              return {
+                textDecoration: "none",
+                color: "rgba(0,0,0,0.8)",
+                display: "flex",
+                alignItems: "center",
+                gap: "10px",
+                backgroundColor: isActive ? "#eeeeee" : "transparent",
+              };
             }}
             to="/books"
           >
