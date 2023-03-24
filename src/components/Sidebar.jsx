@@ -1,8 +1,9 @@
-import React from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
 import PersonIcon from "@mui/icons-material/Person";
 import BookIcon from "@mui/icons-material/Book";
 import LogoutIcon from "@mui/icons-material/Logout";
+import { NavLink } from "react-router-dom";
 
 const Container = styled.div`
   width: 16vw;
@@ -10,15 +11,14 @@ const Container = styled.div`
   /* background-color: gray; */
   padding: 20px 0 0 20px;
   border-right: 1px solid rgba(0, 0, 0, 0.1);
-  display:flex;
-  flex-direction:column;
-  justify-content:space-between;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 `;
 const TopContainer = styled.div`
   display: flex;
   align-items: center;
   gap: 10px;
-  
 `;
 
 const Avatar = styled.img`
@@ -28,36 +28,32 @@ const Avatar = styled.img`
 `;
 
 const TitleTop = styled.p`
-  font-size:18px;
+  font-size: 18px;
 `;
 
 const CenterContainer = styled.div`
-  display:flex;
-  flex-direction:column;
-  gap:10px;
-  margin-top:30px;
-`
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 30px;
+`;
 const MenuContainer = styled.div`
   display: flex;
   align-items: center;
   gap: 10px;
-  padding:10px;
-  &:hover {
-    cursor: pointer;
+  padding: 10px;
+  /* &:hover {
     background-color: rgba(0,0,0,0.1);
-  }
+  } */
 `;
 
 const MenuIcon = styled.span`
-  cursor:pointer;
-  &:hover{
-    color:blue;
-  }
+  /* cursor:pointer; */
 `;
 
-const MenuName = styled.p`
-font-weight:400;
-color:gray;
+const MenuName = styled.span`
+  font-weight: 400;
+  color: gray;
 `;
 
 const BottomContainer = styled.div`
@@ -65,13 +61,14 @@ const BottomContainer = styled.div`
 `;
 
 const BottomItem = styled.span`
-  font-size:20px;
+  font-size: 20px;
 `;
 
-const Top = styled.div`
-`;
+const Top = styled.div``;
 
 const Sidebar = () => {
+  const [active, setActive] = useState(false);
+
   return (
     <Container>
       <Top>
@@ -84,18 +81,36 @@ const Sidebar = () => {
         </TopContainer>
 
         <CenterContainer>
-          <MenuContainer>
+          <NavLink
+            style={{
+              textDecoration: "none",
+              color: "rgba(0,0,0,0.8)",
+              display: "flex",
+              alignItems: "center",
+              gap: "10px",
+            }}
+            to="/authors"
+          >
             <MenuIcon>
-              <PersonIcon sx={{ fontSize: 30 }} />
+              <PersonIcon sx={{ fontSize: 40 }} />
             </MenuIcon>
-            <MenuName>Authors</MenuName>
-          </MenuContainer>
-          <MenuContainer>
+            Authors
+          </NavLink>
+          <NavLink
+            style={{
+              textDecoration: "none",
+              color: "rgba(0,0,0,0.8)",
+              display: "flex",
+              alignItems: "center",
+              gap: "10px",
+            }}
+            to="/books"
+          >
             <MenuIcon>
-              <BookIcon sx={{ fontSize: 30 }} />
+              <BookIcon sx={{ fontSize: 40 }} />
             </MenuIcon>
-            <MenuName>Books</MenuName>
-          </MenuContainer>
+            books
+          </NavLink>
         </CenterContainer>
       </Top>
 
