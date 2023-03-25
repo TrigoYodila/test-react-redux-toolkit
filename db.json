@@ -1,5 +1,5 @@
 {
-  "author": [
+  "authors": [
     {
       "id": 1,
       "name": "Albert",
@@ -42,6 +42,13 @@
       "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRDuc7Ln8zNa0xUlHFxFmiHIW166AnmYsOwag&usqp=CAU",
       "content": "",
       "authorId": 4
+    }
+  ],
+  "admin":[
+    {
+      "id":1,
+      "name":"trigo",
+      "profile":"https://images.pexels.com/photos/733872/pexels-photo-733872.jpeg?auto=compress&cs=tinysrgb&w=600"
     }
   ]
 }
