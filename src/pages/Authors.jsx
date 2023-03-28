@@ -1,5 +1,8 @@
 import React from "react";
 import styled from "styled-components";
+import { useSelector, useDispatch } from "react-redux";
+import { useEffect } from "react";
+import { fetchUsers } from "../features/author/authorSlice";
 
 const Container = styled.div`
   display: flex;
@@ -53,6 +56,13 @@ const Driver = styled.div`
 `;
 
 const Authors = () => {
+  const authors = useSelector((state) => state.user.authors)
+  const dispatch = useDispatch()
+
+  useEffect(()=>{
+    dispatch(fetchUsers())
+  },[])
+
   return (
     <Container>
       <Title>List of Users</Title>
